@@ -1,11 +1,13 @@
-contactos = {"Paula" : "Paula","Paula" : "Sieira Garc韆", "Paula" : "555 55 55 55",
+# un diccionario que almacena todos los datos
+contactos = {"Paula" : "Paula","Paula" : "Sieira Garc铆a", "Paula" : "555 55 55 55",
 "Gloria": "Gloria", "Gloria": "Uzal Agra","Gloria": "999 99 99 99",
-"Marta" : "Marta", "Marta" : "L髉ez De la Rosa", "Marta" : "777 55 77 99" }
+"Marta" : "Marta", "Marta" : "L贸pez De la Rosa", "Marta" : "777 55 77 99" }
 
-
-
-def menu():
   
+
+#  las 5 opciones del men煤
+def menu():
+ 
 
 print = ("1. Guardar contacto")
     
@@ -19,64 +21,68 @@ print = ("5. Salir")
 
 
 
-selec = input("Elige la opci髇")
+selec = input("Elige la opci贸n")
 
 
 
+# si se elige la opci贸n 1, se a帽adir谩 un contacto nuevo
 if selec == "1":
     
-    nombre = input("Nombre: ")
+    nombre = input("Nombre: ")   # se pregunta el nombre, appelidos y n煤mero
     
     apellidos = input("Apellidos: ")
     
-    numero = input("N鷐ero: ")
+    numero = input("N煤mero: ")
     
     contactos["Nombre"] = nombre
-    
+  # se a帽ade al diccionario  
     contactos["Apellidos"] = apellidos
     
-    contactos["N鷐ero"] = numero
+    contactos["N煤mero"] = numero
     
     print (contactos)
 
+   
 
-
+# si la opci贸n es 2, se se escriben todos los contactos 
 elif selec == "2":
     
     print(contactos)
 
 
+# en la opci贸n 3 se elimina un contacto
 elif selec == "3":
     
     elim = input("Elige el contacto a eliminar")
-    
+    # se pregunta el contacto a eliminar
    if elim in contactos:
        
       del contactos[elim]
-        
+    # se elimina y se escribe la nueva lista    
       print (contactos)
     
   else:
         
       print ("Ese contacto no existe")
 
-    
+    # en caso de no existir      
 
 
+# si la opci贸n es 4 se puede editar un contacto
 elif selec == "4":
     
      ed = input("Elige el contacto que quieras editar")
-    
+   # se elige el contacto a editar    
   if ed in contactos:
         
-     nom = input("Nombre: ")
+     nom = input("Nombre: ")   # se pregunta el nombre, apellidos y n煤mero nuevos
         
      apell = input("Apellidos: ")
         
-     numer = input("N鷐ero: ")
+     numer = input("N煤mero: ")
         
      contactos[ed] = nom
-        
+        # se sustituye en el diccionario
      contactos[ed] = apell
         
      contactos[ed] = numer
@@ -87,9 +93,14 @@ elif selec == "4":
   else:
         
      print ("Ese contacto no existe")
-        
+   # en caso de no existir        
+
 
 
 elif selec == "5":
     
     print ("Ha salido")
+
+
+else:
+     print ("No ha elegido ninguna opci贸n")
